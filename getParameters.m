@@ -1,8 +1,8 @@
 function params = getParameters()
     % Define the subfolder identifier for BOLD fMRI data
-    params.main_dir = 'U:\Data\Sabina''s Decision Making';
-    params.spm_dir = 'C:\Toolbox\spm12';
-    params.EEGLAB_dir = 'C:\Toolbox\eeglab2023.1';
+    params.main_dir = ' ';  % Raw data man folder
+    params.spm_dir = 'C:\Toolbox\spm12';                    % Path for SPM12 toolbox
+    params.EEGLAB_dir = 'C:\Toolbox\eeglab2023.1';          % Path for EEGLAB toolbox
     params.numWorkers = 2; % number of workers for parallel computing
     params.data_main_dir_pattern = fullfile(params.main_dir, 'sub-'); %Specify subjects data directory pattern
     params.niipattern = {'sub-*_run-01_bold.nii', 'sub-*_run-02_bold.nii'};
