@@ -1,4 +1,4 @@
-function results = regress_neural_activity_to_behavior(neural_population_activity, behavioral_data, time_window, num_top_features, n_permutations, num_of_trials)
+function results = regress_neural_activity_to_behavior(neural_population_activity, behavioral_data, time_window, num_top_features, n_permutations)
 
     % Set default values if not provided
     if nargin < 5 || isempty(n_permutations)
@@ -30,9 +30,9 @@ function results = regress_neural_activity_to_behavior(neural_population_activit
     for beh_idx = 1:n_behaviors
         % Select the behavior data
         if beh_idx == 1
-            behavior_data = reaction_time(1: num_of_trials);
+            behavior_data = reaction_time;
         else
-            behavior_data = confidence_rating(1: num_of_trials);
+            behavior_data = confidence_rating;
         end
         
         performance = nan(num_sources, num_populations);
@@ -43,7 +43,7 @@ function results = regress_neural_activity_to_behavior(neural_population_activit
         for src_idx = 1:num_sources
             for pop_idx = 1:num_populations
                 % Extract the current neural activity matrix and select the desired time window
-                curr_activity = source_activity{src_idx, pop_idx}(start_idx:end_idx, (1: num_of_trials));
+                curr_activity = source_activity{src_idx, pop_idx}(start_idx:end_idx, :);
                 
                 % Transpose the current activity matrix to have trials as rows
                 curr_activity = curr_activity';
