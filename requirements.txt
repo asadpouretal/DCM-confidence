@@ -1,0 +1,13 @@
+# This repository is pure MATLAB; there are no Python/pip dependencies.
+# This file lists the software needed to run the analysis (it is not for `pip install`).
+#
+# MATLAB (the code uses parfor, fitrsvm, etc.; the paper used R2023a)
+#   - Statistics and Machine Learning Toolbox   (fitrsvm: SVR analysis)
+#   - Parallel Computing Toolbox                (parfor; see params.numWorkers)
+#
+# External toolboxes (set their paths in getParameters.m)
+#   - SPM12     https://www.fil.ion.ucl.ac.uk/spm/software/spm12/
+#   - EEGLAB    https://sccn.ucsd.edu/eeglab/  (the paths in getParameters.m point to eeglab2023.1)
+#
+# Data
+#   - OpenNeuro ds002739 v1.0.0: https://openneuro.org/datasets/ds002739/versions/1.0.0
